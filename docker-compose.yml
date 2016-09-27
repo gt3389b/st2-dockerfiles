@@ -86,6 +86,14 @@ actionrunner:
   volumes_from:
     - data
 
+web:
+  build: ./st2web
+  #image: stackstorm/st2web
+  links:
+    - api
+  ports:
+    - "3000:3000"
+
 ## External Services
 mongo:
   image: mongo
